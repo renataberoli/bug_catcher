@@ -1,0 +1,36 @@
+{% extends 'issue/base.html' %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <div aria-label="Basic example" class="btn-group" role="group">
+                <a class="badge bg-success text-light"
+                   href="{% url 'issue_edit' pk=issue.pk %}">
+                    <ion-icon name="create-outline" size="large"></ion-icon>
+                </a>
+                <a class="btn btn-danger" href="{% url 'issue_delete' pk=issue.pk %}">
+                    <ion-icon name="close-circle-outline" size="large"></ion-icon>
+                </a>
+            </div>
+            <h1>Issue {{ issue.id }} detail</h1>
+            {% if issue.priority == "1" %}
+            <p class="badge rounded-pill bg-danger">Priority: {{ issue.get_priority_display }}</p>
+            {% elif issue.priority == "2" %}
+            <p class="badge rounded-pill bg-warning text-dark">Priority: {{ issue.get_priority_display }}</p>
+            {% elif issue.priority == "3" %}
+            <p class="badge rounded-pill bg-primary">Priority: {{ issue.get_priority_display }}</p>
+            {% else %}
+            <p class="badge rounded-pill bg-success">Priority: {{ issue.get_priority_display }}</p>
+            {% endif %}
+            <p>Author: {{ issue.author }}</p>
+            <p>Title: {{ issue.title }}</p>
+            <p>Description: {{ issue.description }}</p>
+            <p>Project: {{ issue.project }}</p>
+            <p>Attached files: {{ issue.attached_file }}</p>
+            <p>Assignee: {{ issue.assignee }}</p>
+            <p>Status: {{ issue.get_status_display }}</p>
+            <p>Label: {{ issue.get_label_display }}</p>
+            <p>Creation date: {{ issue.creation_date }}</p>
+        </div>
+    </div>
+{% endblock %}

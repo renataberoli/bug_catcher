@@ -1,0 +1,70 @@
+{% load static %}
+
+<html lang="en">
+    <head>
+        <title>Bug Catcher</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+
+        <!-- Bootstrap CSS -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- local css -->
+        <link href="{% static 'css/app.css' %}" rel="stylesheet">
+
+        <!-- Ionic Icons library-->
+        <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'issue_list' %}">
+                    <ion-icon name="bug-outline"></ion-icon>
+
+                    Bug
+                    Catcher</a>
+                <a href="{% url 'issue_new' %}">
+                    <ion-icon name="add-circle-outline" size="large"></ion-icon>
+                </a>
+                <button aria-controls="offcanvasNavbar" class="navbar-toggler" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
+                        type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-end" id="offcanvasNavbar" tabindex="-1">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                            <ion-icon name="bug-outline"></ion-icon>
+                            Bug Catcher
+                        </h5>
+                        <button aria-label="Close" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                type="button"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a aria-current="page" class="nav-link active" href="#">Issues List</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">My issues</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Issues assigned to me</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

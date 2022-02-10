@@ -1,0 +1,98 @@
+{% extends 'issue/base.html' %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <h1>Issues List</h1>
+            <form class="row g-3">
+                <div class="col-5">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="search by text" aria-label="search field"
+                           aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2"><ion-icon name="search-outline"></ion-icon></button>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <select class="form-select" aria-label="status select">
+                    <option selected>Select a status</option>
+                    <option value="1">Open</option>
+                    <option value="2">Pending</option>
+                    <option value="3">Close</option>
+                </select>
+                </div>
+                <div class="col-auto">
+                    <select class="form-select" aria-label="label select">
+                    <option selected>Select a label</option>
+                    <option value="1">Front-end</option>
+                    <option value="2">Back-end</option>
+                    <option value="3">Design</option>
+                    <option value="4">Operational</option>
+                </select>
+                </div>
+                <div class="col-auto">
+                    <div class="form-check">
+                        <input class="form-check-input" id="flexCheckDefault" type="checkbox" value="">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Assigned to me
+                        </label>
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-responsive table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Project</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Date of creation</th>
+                    <th scope="col">Assignee to</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for issue in page_obj %}
+                <tr>
+                    <td scope="row">#{{ issue.id }}</td>
+                    {% if issue.priority == "1" %}
+                    <td class="bg-danger text-light">{{ issue.get_priority_display }}</td>
+                    {% elif issue.priority == "2" %}
+                    <td class="bg-warning text-dark">{{ issue.get_priority_display }}</td>
+                    {% elif issue.priority == "3" %}
+                    <td class="bg-primary text-light">{{ issue.get_priority_display }}</td>
+                    {% else %}
+                    <td class="bg-success text-light">{{ issue.get_priority_display }}</td>
+                    {% endif %}
+                    <td class="text-truncate" style="max-width: 300px;"><a href="{% url 'issue_detail' pk=issue.pk %}">{{ issue.title }}</a></td>
+                    <td class="text-truncate" style="max-width: 300px;">{{ issue.description }}</td>
+                    <td>{{ issue.project }}</td>
+                    <td>{{ issue.author }}</td>
+                    <td>{{ issue.creation_date }}</td>
+                    <td>{{ issue.assignee }}</td>
+                    <td>{{ issue.status }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}"><<</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">>></a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,1 +1,1 @@
-# bug_catcher
+# Bug catcher
