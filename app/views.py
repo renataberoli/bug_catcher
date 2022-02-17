@@ -6,8 +6,31 @@ from django.core.paginator import Paginator
 
 
 def issue_list(request):
-    issues = Issue.objects.filter(status="open").order_by('priority')
-    paginator = Paginator(issues, 10)
+    search_argument = request.GET.get("data")
+    priority = request.GET.get("priority")
+    status = request.GET.get("status")
+    label = request.GET.get("label")
+    print(priority)
+
+    if search_argument:
+        search_data = request.GET.get('data')
+        filter_argument = Issue.objects.filter(title__icontains=search_data)
+        paginator = Paginator(filter_argument, 10)
+    elif priority == "1":
+        filter_argument = Issue.objects.filter(priority="1")
+        paginator = Paginator(filter_argument, 10)
+    elif priority == "2":
+        filter_argument = Issue.objects.filter(priority="2")
+        paginator = Paginator(filter_argument, 10)
+    elif priority == "3":
+        filter_argument = Issue.objects.filter(priority="3")
+        paginator = Paginator(filter_argument, 10)
+    elif priority == "4":
+        filter_argument = Issue.objects.filter(priority="4")
+        paginator = Paginator(filter_argument, 10)
+    else:
+        issues = Issue.objects.filter(status="open").order_by('priority')
+        paginator = Paginator(issues, 10)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -53,5 +76,3 @@ def issue_delete(request, pk):
         return redirect('issue_list')
 
     return render(request, 'issue/issue_delete.html', {'issue': issue})
-
-

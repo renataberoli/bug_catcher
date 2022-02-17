@@ -4,16 +4,27 @@
     <div class="card">
         <div class="card-body">
             <h1>Issues List</h1>
-            <form class="row g-3">
-                <div class="col-5">
+            <form class="row g-3" action="." method="GET">
+                <div class="col-4">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="search by text" aria-label="search field"
-                           aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2"><ion-icon name="search-outline"></ion-icon></button>
+                           aria-describedby="button-addon2" name="data">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><ion-icon
+                                name="search-outline"></ion-icon>
+                        </button>
                     </div>
                 </div>
                 <div class="col-auto">
-                    <select class="form-select" aria-label="status select">
+                    <select class="form-select" aria-label="priority select" name="priority">
+                        <option selected>Select a priority</option>
+                        <option value="1">Urgent</option>
+                        <option value="2">Alto</option>
+                        <option value="3">Normal</option>
+                        <option value="4">Baixo</option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <select class="form-select" aria-label="status select" name="status">
                     <option selected>Select a status</option>
                     <option value="1">Open</option>
                     <option value="2">Pending</option>
@@ -21,7 +32,7 @@
                 </select>
                 </div>
                 <div class="col-auto">
-                    <select class="form-select" aria-label="label select">
+                    <select class="form-select" aria-label="label select" name="label">
                     <option selected>Select a label</option>
                     <option value="1">Front-end</option>
                     <option value="2">Back-end</option>
@@ -31,14 +42,21 @@
                 </div>
                 <div class="col-auto">
                     <div class="form-check">
-                        <input class="form-check-input" id="flexCheckDefault" type="checkbox" value="">
+                        <input class="form-check-input" id="flexCheckDefault" type="checkbox" name="assigned-to-me" value="0">
                         <label class="form-check-label" for="flexCheckDefault">
                             Assigned to me
                         </label>
                     </div>
                 </div>
+                <div class="col-auto">
+                    <button class="btn btn-outline-primary" type="submit">
+                        Search
+                    </button>
+                </div>
             </form>
-
+            <div>
+                <a href="{% url 'issue_list' %}">Clear filters</a>
+            </div>
             <table class="table table-responsive table-striped">
                 <thead>
                 <tr>
