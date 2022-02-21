@@ -15,25 +15,19 @@ def issue_list(request):
     queryset = Issue.objects.all()
 
     if search_argument:
-        print("check search: ", search_argument)
         search_data = request.GET.get('data')
         queryset = queryset.filter(title__icontains=search_data)
 
     if priority:
-        print("check priority: ", priority)
         queryset = queryset.filter(priority=priority)
 
     if status:
-        print("check status: ", status)
         queryset = queryset.filter(status=status)
 
     if label:
-        print("check label:", label)
         queryset = queryset.filter(label=label)
 
     paginator = Paginator(queryset, 10)
-
-    print("This is the data on queryset", queryset)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
