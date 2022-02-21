@@ -23,41 +23,21 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'issue_list' %}">
-                    <ion-icon name="bug-outline"></ion-icon>
-                    Bug
-                    Catcher</a>
-                <a href="{% url 'issue_new' %}">
-                    <ion-icon name="add-circle-outline" size="large"></ion-icon>
-                </a>
-                <button aria-controls="offcanvasNavbar" class="navbar-toggler" data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas"
-                        type="button">
+                <a class="navbar-brand" href="#">Bug catcher</a>
+                <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                        data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div aria-labelledby="offcanvasNavbarLabel" class="offcanvas offcanvas-end" id="offcanvasNavbar" tabindex="-1">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                            <ion-icon name="bug-outline"></ion-icon>
-                            Bug Catcher
-                        </h5>
-                        <button aria-label="Close" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                type="button"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a aria-current="page" class="nav-link active" href="#">Issues List</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">My issues</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Issues assigned to me</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="{% url 'issue_new' %}" >
+                                <ion-icon name="add-circle-outline" size="large"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>

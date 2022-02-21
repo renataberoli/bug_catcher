@@ -1,11 +1,12 @@
 {% extends 'issue/base.html' %}
 
 {% block content %}
-    <div class="card">
+    <div class="card mh-100">
         <div class="card-body">
             <h1>Issues List</h1>
-            <form class="row g-3" action="." method="GET">
+            <form class="row g-4" action="." method="GET">
                 <div class="col-4">
+                    <label>Search field</label>
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="search by text" aria-label="search field"
                            aria-describedby="button-addon2" name="data">
@@ -15,6 +16,7 @@
                     </div>
                 </div>
                 <div class="col-auto">
+                    <label>Priority</label>
                     <select class="form-select" aria-label="priority select" name="priority">
                         <option selected></option>
                         <option value="1">Urgent</option>
@@ -24,6 +26,7 @@
                     </select>
                 </div>
                 <div class="col-auto">
+                    <label>Status</label>
                     <select class="form-select" aria-label="status select" name="status">
                     <option selected></option>
                     <option value="open">Open</option>
@@ -32,6 +35,7 @@
                 </select>
                 </div>
                 <div class="col-auto">
+                    <label>Label</label>
                     <select class="form-select" aria-label="label select" name="label">
                     <option selected></option>
                     <option value="frontend">Front-end</option>
@@ -41,11 +45,9 @@
                 </select>
                 </div>
                 <div class="col-auto">
+                    <label>Assigned to me</label>
                     <div class="form-check">
                         <input class="form-check-input" id="flexCheckDefault" type="checkbox" name="assigned-to-me">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Assigned to me
-                        </label>
                     </div>
                 </div>
                 <div class="col-auto">
@@ -67,7 +69,6 @@
                     <th scope="col">Project</th>
                     <th scope="col">Label</th>
                     <th scope="col">Author</th>
-                    <th scope="col">Date of creation</th>
                     <th scope="col">Assignee to</th>
                     <th scope="col">Status</th>
                 </tr>
@@ -90,7 +91,6 @@
                     <td>{{ issue.project }}</td>
                     <td>{{ issue.get_label_display }}</td>
                     <td>{{ issue.author }}</td>
-                    <td>{{ issue.creation_date }}</td>
                     <td>{{ issue.assignee }}</td>
                     <td>{{ issue.get_status_display }}</td>
                 </tr>
