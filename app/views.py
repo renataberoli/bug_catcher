@@ -10,27 +10,30 @@ def issue_list(request):
     priority = request.GET.get("priority")
     status = request.GET.get("status")
     label = request.GET.get("label")
-    print(priority)
+    assigned = request.GET.get("assigned-to-me")
+
+    queryset = Issue.objects.all()
 
     if search_argument:
+        print("check search: ", search_argument)
         search_data = request.GET.get('data')
-        filter_argument = Issue.objects.filter(title__icontains=search_data)
-        paginator = Paginator(filter_argument, 10)
-    elif priority == "1":
-        filter_argument = Issue.objects.filter(priority="1")
-        paginator = Paginator(filter_argument, 10)
-    elif priority == "2":
-        filter_argument = Issue.objects.filter(priority="2")
-        paginator = Paginator(filter_argument, 10)
-    elif priority == "3":
-        filter_argument = Issue.objects.filter(priority="3")
-        paginator = Paginator(filter_argument, 10)
-    elif priority == "4":
-        filter_argument = Issue.objects.filter(priority="4")
-        paginator = Paginator(filter_argument, 10)
-    else:
-        issues = Issue.objects.filter(status="open").order_by('priority')
-        paginator = Paginator(issues, 10)
+        queryset = queryset.filter(title__icontains=search_data)
+
+    if priority:
+        print("check priority: ", priority)
+        queryset = queryset.filter(priority=priority)
+
+    if status:
+        print("check status: ", status)
+        queryset = queryset.filter(status=status)
+
+    if label:
+        print("check label:", label)
+        queryset = queryset.filter(label=label)
+
+    paginator = Paginator(queryset, 10)
+
+    print("This is the data on queryset", queryset)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
