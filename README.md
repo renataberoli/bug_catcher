@@ -8,6 +8,6 @@ that aims to simplicity and be useful for small teams that use or not agile meth
 - [x] CRUD (create, read, update and delete)
 - [x] Issue list
 - [x] List pagination
-- [ ] Functional list filters
+- [x] Functional list filters
 - [ ] Login and authentication
 - [ ] Improve the UI
