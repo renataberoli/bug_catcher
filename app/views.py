@@ -12,7 +12,11 @@ def issue_list(request):
     label = request.GET.get("label")
     assigned = request.GET.get("assigned-to-me")
 
-    queryset = Issue.objects.all()
+    if not request.GET:
+        queryset = Issue.objects.filter(status="open").order_by("priority")
+
+    else:
+        queryset = Issue.objects.all()
 
     if search_argument:
         search_data = request.GET.get('data')
@@ -27,7 +31,7 @@ def issue_list(request):
     if label:
         queryset = queryset.filter(label=label)
 
-    paginator = Paginator(queryset, 10)
+    paginator = Paginator(queryset, 15)
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
