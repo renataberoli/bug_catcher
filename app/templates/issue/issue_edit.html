@@ -1,9 +1,10 @@
 {% extends 'issue/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <h2>New issue</h2>
     <form class="post-form" method="POST">{% csrf_token %}
-        {{ form.as_p }}
+        {{ form|crispy }}
         <button class="save btn btn-secondary" type="submit">Save</button>
     </form>
 {% endblock %}
