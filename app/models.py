@@ -23,14 +23,6 @@ PRIORITY = (
 )
 
 
-class Assignee(models.Model):
-    name = models.CharField(max_length=200, blank=True)
-    email = models.EmailField(max_length=300)
-
-    def __str__(self):
-        return self.email
-
-
 class Project(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=400, blank=True)
@@ -51,8 +43,8 @@ class Issue(models.Model):
 
     title = models.CharField(max_length=200)
     description = models.TextField(max_length=5000)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    assignee = models.ForeignKey(Assignee, on_delete=models.CASCADE, null=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='author')
+    assignee = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, related_name='assignee')
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     attached_file = models.ForeignKey(File, on_delete=models.CASCADE, null=True)
     status = models.CharField(max_length=100, choices=STATUS, default='open')
