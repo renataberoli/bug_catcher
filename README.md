@@ -9,5 +9,6 @@ that aims to simplicity and be useful for small teams that use or not agile meth
 - [x] Issue list
 - [x] List pagination
 - [x] Functional list filters
-- [ ] Login and authentication
-- [ ] Improve the UI
+- [x] Login and authentication
+- [ ] Improve the UI 
+- [ ] Improve Login template
