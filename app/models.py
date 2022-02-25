@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 STATUS = (
@@ -20,14 +21,6 @@ PRIORITY = (
     ('3', 'Normal'),
     ('4', 'Low'),
 )
-
-
-class Author(models.Model):
-    name = models.CharField(max_length=200, blank=True)
-    email = models.EmailField(max_length=300)
-
-    def __str__(self):
-        return self.email
 
 
 class Assignee(models.Model):
@@ -58,7 +51,7 @@ class Issue(models.Model):
 
     title = models.CharField(max_length=200)
     description = models.TextField(max_length=5000)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     assignee = models.ForeignKey(Assignee, on_delete=models.CASCADE, null=True)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     attached_file = models.ForeignKey(File, on_delete=models.CASCADE, null=True)

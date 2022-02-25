@@ -22,7 +22,7 @@
             {% else %}
             <p class="badge rounded-pill bg-success">Priority: {{ issue.get_priority_display }}</p>
             {% endif %}
-            <p>Author: {{ issue.author }}</p>
+            <p>Author: {{ issue.author.email }}</p>
             <p>Title: {{ issue.title }}</p>
             <p>Description: {{ issue.description }}</p>
             <p>Project: {{ issue.project }}</p>

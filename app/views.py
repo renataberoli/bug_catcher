@@ -10,7 +10,7 @@ def issue_list(request):
     priority = request.GET.get("priority")
     status = request.GET.get("status")
     label = request.GET.get("label")
-    assigned = request.GET.get("assigned-to-me")
+    # assigned = request.GET.get("assigned-to-me")
 
     if not request.GET:
         queryset = Issue.objects.filter(status="open").order_by("priority")
@@ -48,6 +48,8 @@ def issue_new(request):
         form = IssueForm(request.POST)
         if form.is_valid():
             issue = form.save(commit=False)
+            issue.author = request.user
+            print(f"request user: {request.user.email}")
             issue.creation_date = timezone.now()
             issue.save()
             return redirect('issue_detail', pk=issue.pk)

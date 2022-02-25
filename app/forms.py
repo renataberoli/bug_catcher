@@ -6,5 +6,5 @@ class IssueForm(forms.ModelForm):
 
     class Meta:
         model = Issue
-        fields = ('title', 'description', 'author', 'priority', 'project', 'assignee', 'label', 'status', 'attached_file',)
+        fields = ('title', 'description', 'priority', 'project', 'assignee', 'label', 'status', 'attached_file',)
 
