@@ -46,11 +46,17 @@
                         <label for="floatingInput">Select a label</label>
                     </div>
                 </div>
-                <div class="col-auto">
-                    <label>Assigned to me</label>
-                    <div class="form-check">
-                        <input class="form-check-input" id="flexCheckDefault" type="checkbox" name="assigned-to-me">
-                    </div>
+                <div class="col-2">
+                     <div class="form-floating">
+                        <select class="form-select" id="floatingSelect4" aria-label="Assigned to me" name="Assignee">
+                            <option></option>
+                            {% for a in assignee %}
+                            <option value="{{a}}">{{a}}</option>
+                            {% endfor %}
+                        </select>
+                        <label for="floatingInput">Select a user</label>
+                     </div>
+
                 </div>
                 <div class="col-auto">
                     <button class="btn btn-outline-primary" type="submit">
