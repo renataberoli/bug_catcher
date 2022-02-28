@@ -36,15 +36,15 @@ def issue_list(request):
 
     paginator = Paginator(queryset, 15)
 
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-
     issue_data = Issue.objects.all()
     users = []
     for issue in issue_data:
         user_assigned = issue.assignee
         if user_assigned not in users:
             users.append(issue.assignee)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
     return render(request, 'issue/issues_list.html', {'page_obj': page_obj, 'users': users})
 
