@@ -7,3 +7,4 @@ class IssueForm(forms.ModelForm):
     class Meta:
         model = Issue
         fields = ('title', 'description', 'priority', 'project', 'assignee', 'label', 'status', 'attached_file',)
+

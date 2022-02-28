@@ -1,7 +1,16 @@
+{% extends '../issue/base.html' %}
 {% load crispy_forms_tags %}
 
-<h2>Log in</h2>
-<form class="post-form" method="POST">{% csrf_token %}
-  {{ form|crispy }}
-  <button class="save btn btn-secondary" type="submit">Log In</button>
-</form>
+{% block content %}
+  <div class="card text-center mt-5">
+    <div class="card-body login-card">
+      <h2>Log in</h2>
+      <form method="POST">{% csrf_token %}
+        {{ form|crispy}}
+        <div class="d-grid gap-2 col-6 mx-auto mt-4">
+          <button type="submit" class="btn btn-primary">Log in</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
