@@ -50,8 +50,8 @@
                      <div class="form-floating">
                         <select class="form-select" id="floatingSelect4" aria-label="Assigned to me" name="Assignee">
                             <option></option>
-                            {% for a in assignee %}
-                            <option value="{{a}}">{{a}}</option>
+                            {% for user in users %}
+                            <option value="{{ user }}">{{ user }}</option>
                             {% endfor %}
                         </select>
                         <label for="floatingInput">Select a user</label>
