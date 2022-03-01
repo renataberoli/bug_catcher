@@ -4,7 +4,9 @@
     <div class="card mh-100 mt-3">
         <div class="card-body">
             <h1>Issues List</h1>
-            <form class="row g-4" action="." method="GET">
+            <div class="row">
+                <div class="col-md">
+                    <form class="row g-4" action="." method="GET">
                 <div class="col-3">
                     <div class="form-floating">
                         <input type="text" class="form-control" id="floatingInput" placeholder="search by text" name="data">
@@ -51,21 +53,25 @@
                         <select class="form-select" id="floatingSelect4" aria-label="Assigned to me" name="assigned">
                             <option></option>
                             {% for user in users %}
-                            <option value="{{ user }}">{{ user }}</option>
+                            <option value="{{ user.id }}">{{ user }}</option>
                             {% endfor %}
                         </select>
                         <label for="floatingInput">Select a user</label>
                      </div>
 
                 </div>
-                <div class="col-auto">
+                <div class="col-auto align-self-center">
                     <button class="btn btn-outline-primary" type="submit">
                         Search
                     </button>
                 </div>
             </form>
-            <div>
+                </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col-md">
                 <a href="{% url 'issue_list' %}">Clear filters</a>
+              </div>
             </div>
             <table class="table table-responsive table-striped">
                 <thead>
