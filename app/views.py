@@ -11,7 +11,6 @@ def issue_list(request):
     status = request.GET.get("status")
     label = request.GET.get("label")
     assigned = request.GET.get("assigned")
-    print(assigned)
 
     if not request.GET:
         queryset = Issue.objects.filter(status="open").order_by("priority")
