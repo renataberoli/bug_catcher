@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="card-body">
-                                <span class=""># {{ issue.id }}</span>
+                                <span class="text-secondary p-1 rounded"># {{issue.id }}</span>
                                 <h2>{{ issue.title }}</h2>
                                 <button class="btn btn-success">Edit</button>
                                 <button class="btn btn-danger">Delete</button>
@@ -17,29 +17,55 @@
                         <div class="col-lg-4">
                             <div class="card-body">
                                 <p class="text-secondary">Priority</p>
-                                <div>
+                                <div class="ps-1">
                                     {% if issue.priority == "1" %}
-                                        <p class="badge rounded-pill bg-danger">{{ issue.get_priority_display }}</p>
+                                        <p class="border-start border-2 border-danger text-danger"><ion-icon
+                                                name="flame-outline"></ion-icon>
+                                            {{ issue.get_priority_display }}</p>
                                     {% elif issue.priority == "2" %}
-                                        <p class="badge rounded-pill bg-warning text-dark">{{ issue.get_priority_display }}</p>
+                                        <p class="border-start border-2 border-warning text-warning"><ion-icon
+                                                name="trending-up-outline"></ion-icon>
+                                            {{ issue.get_priority_display }}</p>
                                     {% elif issue.priority == "3" %}
-                                        <p class="badge rounded-pill bg-primary">{{ issue.get_priority_display }}</p>
+                                        <p class="border-start border-2 border-primary text-primary"><ion-icon
+                                                name="trending-down-outline"></ion-icon>
+                                            {{ issue.get_priority_display }}</p>
                                     {% else %}
-                                        <p class="badge rounded-pill bg-success">{{ issue.get_priority_display }}</p>
+                                        <p class="border-start border-2 border-success text-success"><ion-icon
+                                                name="arrow-down-outline"></ion-icon>
+                                            {{ issue.get_priority_display }}</p>
                                     {% endif %}
                                 </div>
                                 <p class="text-secondary">Status</p>
-                                <p class="text-black-50 ">{{ issue.get_status_display }}</p>
+                                <div class="ps-1">
+                                    {% if issue.status == "open" %}
+                                        <p class="border-start border-2 border-success text-success ps-1">
+                                            {{ issue.get_status_display }}</p>
+                                    {% elif issue.status == "closed" %}
+                                        <p class="border-start border-2 border-warning text-warning ps-1">{{
+                                            issue.get_status_display }}</p>
+                                    {% else %}
+                                        <p class="border-start border-2 border-primary text-primary ps-1">{{
+                                            issue.get_status_display }}</p>
+                                    {% endif %}
+                                </div>
                                 <p class="text-secondary">Label</p>
-                                <p class="text-black-50">{{ issue.get_label_display }}</p>
+                                <p class="text-black-50 ps-1">
+                                    {{ issue.get_label_display }}</p>
+                                <img src="" class="rounded-circle">
                                 <p class="text-secondary">Assigned</p>
-                                <p class="text-black-50">{{ issue.assignee }}</p>
+                                <p class="text-black-50 ps-1">
+                                    {{ issue.assignee }}</p>
+                                <img src="" class="rounded-circle">
                                 <p class="text-secondary">Author</p>
-                                <p class="text-black-50">{{ issue.author }}</p>
+                                <p class="text-black-50 ps-1">
+                                    {{ issue.author }}</p>
                                 <p class="text-secondary">Project</p>
-                                <p class="text-black-50">{{ issue.project }}</p>
+                                <p class="text-black-50 ps-1">
+                                    {{ issue.project }}</p>
                                 <p class="text-secondary">Creation date</p>
-                                <p class="text-black-50">{{ issue.creation_date }}</p>
+                                <p class="text-black-50 ps-1">
+                                    {{ issue.creation_date }}</p>
                             </div>
                         </div>
                     </div>
