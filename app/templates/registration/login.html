@@ -2,21 +2,11 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <div class="row">
+  <div class="row d-flex align-items-center">
     <div class="col-lg-4 col-md-4 col-sm-1">
-      <div class="card mt-5">
+      <div class="card mt-5 shadow p-3 mb-5 bg-body rounded">
         <div class="card-body ">
           <h2 class="text-center">Log in</h2>
-          <form method="POST">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Username</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1">
-            </div>
-            <div class="mb-3">
-              <label for="inputPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword">
-            </div>
-          </form>
           <form method="POST">{% csrf_token %}
             {{ form|crispy }}
             <div class="d-grid gap-2 mx-auto mt-4">
