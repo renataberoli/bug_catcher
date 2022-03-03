@@ -13,7 +13,7 @@
                                     <ion-icon name="create-outline"></ion-icon></a>
                                 <a class="btn btn-outline-danger" href="{% url 'issue_delete' pk=issue.pk %}">
                                     <ion-icon name="close-circle-outline"></ion-icon></a>
-                                <p class="mt-5">{{ issue.description }}</p>
+                                <p class="mt-5 text-secondary">{{ issue.description }}</p>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -74,75 +74,5 @@
                     </div>
             </div>
         </div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col">
-        <div class="card shadow p-3 mb-5 bg-body rounded">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="card-body">
-                        <h1>{{ issue.title }} #{{ issue.id }}</h1>
-                        <div class="row">
-                            <div class="col-md-auto">
-                                {% if issue.priority == "1" %}
-                                    <p class="badge rounded-pill bg-danger">Priority: {{ issue.get_priority_display }}</p>
-                                {% elif issue.priority == "2" %}
-                                    <p class="badge rounded-pill bg-warning text-dark">Priority: {{ issue.get_priority_display }}</p>
-                                {% elif issue.priority == "3" %}
-                                    <p class="badge rounded-pill bg-primary">Priority: {{ issue.get_priority_display }}</p>
-                                {% else %}
-                                    <p class="badge rounded-pill bg-success">Priority: {{ issue.get_priority_display }}</p>
-                                {% endif %}
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <p><strong>Description</strong></p>
-                            <p>{{ issue.description }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card-body">
-                        <div class="row g-2">
-                            <div class="col-md-auto">
-                                <a class="btn btn-success" href="{% url 'issue_edit' pk=issue.pk %}"
-                                   role="button">
-                                    <ion-icon name="create-outline" size="Large"></ion-icon>
-                                </a>
-                            </div>
-                            <div class="col-md-auto">
-                                <a class="btn btn-danger" href="{% url 'issue_delete' pk=issue.pk %}"
-                                   role="button">
-                                    <ion-icon name="close-circle-outline" size="Large"></ion-icon>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <p><strong>Status</strong> {{ issue.get_status_display }}</p>
-                        </div>
-                        <div class="row">
-                            <p><strong>Author</strong> {{ issue.author }}</p>
-                        </div>
-                        <div class="row">
-                            <p><strong>Project</strong> {{ issue.project }}</p>
-                        </div>
-                        <div class="row">
-                            <p><strong>Label</strong> {{ issue.get_label_display }}</p>
-                        </div>
-                        <div class="row">
-                            <p><strong>Assignee</strong> {{ issue.assignee }}</p>
-                        </div>
-                        <div class="row">
-                            <p><strong>Attached files</strong> {{ issue.attached_file }}</p>
-                        </div>
-                        <div class="row">
-                            <p><strong>Creation date</strong> {{ issue.creation_date }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
     </div>
 {% endblock %}
