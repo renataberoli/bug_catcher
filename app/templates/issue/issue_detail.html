@@ -9,8 +9,10 @@
                             <div class="card-body">
                                 <span class="text-secondary p-1 rounded"># {{issue.id }}</span>
                                 <h2>{{ issue.title }}</h2>
-                                <button class="btn btn-success">Edit</button>
-                                <button class="btn btn-danger">Delete</button>
+                                <a class="btn btn-outline-success" href="{% url 'issue_edit' pk=issue.pk %}">
+                                    <ion-icon name="create-outline"></ion-icon></a>
+                                <a class="btn btn-outline-danger" href="{% url 'issue_delete' pk=issue.pk %}">
+                                    <ion-icon name="close-circle-outline"></ion-icon></a>
                                 <p class="mt-5">{{ issue.description }}</p>
                             </div>
                         </div>
@@ -52,13 +54,14 @@
                                 <p class="text-secondary">Label</p>
                                 <p class="text-black-50 ps-1">
                                     {{ issue.get_label_display }}</p>
-                                <img src="{% static 'img/user1.jpeg' %}" class="rounded-circle">
                                 <p class="text-secondary">Assigned</p>
-                                <p class="text-black-50 ps-1">
+                                <p class="text-black-50 ps-1"><img src="./../../static/img/user1.jpeg"
+                                                                   width="20px" height="20px"
+                                                                   class="rounded-circle">
                                     {{ issue.assignee }}</p>
-                                <img src="{% static 'img/user2.jpeg' %}" class="rounded-circle">
                                 <p class="text-secondary">Author</p>
-                                <p class="text-black-50 ps-1">
+                                <p class="text-black-50 ps-1"><img src="./../../static/img/user2.jpeg" width="20px"
+                                                                   height="20px" class="rounded-circle">
                                     {{ issue.author }}</p>
                                 <p class="text-secondary">Project</p>
                                 <p class="text-black-50 ps-1">
