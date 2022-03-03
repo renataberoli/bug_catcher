@@ -89,3 +89,4 @@ def issue_delete(request, pk):
         return redirect('issue_list')
 
     return render(request, 'issue/issue_delete.html', {'issue': issue})
+
