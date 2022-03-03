@@ -73,10 +73,10 @@
                 <a href="{% url 'issue_list' %}">Clear filters</a>
               </div>
             </div>
-            <table class="table table-responsive table-striped">
+            <table class="table table-responsive text-secondary ">
                 <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">ID #</th>
                     <th scope="col">Priority</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
@@ -90,7 +90,7 @@
                 <tbody>
                 {% for issue in page_obj %}
                 <tr>
-                    <td scope="row">#{{ issue.id }}</td>
+                    <td scope="row">{{ issue.id }}</td>
                     {% if issue.priority == "1" %}
                     <td class="bg-danger text-light">{{ issue.get_priority_display }}</td>
                     {% elif issue.priority == "2" %}
