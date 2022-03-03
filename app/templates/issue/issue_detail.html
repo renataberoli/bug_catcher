@@ -2,8 +2,54 @@
 
 {% block content %}
     <div class="row mt-3">
+        <div class="col">
+            <div class="card shadow p-3 mb-5 bg-body rounded">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="card-body">
+                                <span class=""># {{ issue.id }}</span>
+                                <h2>{{ issue.title }}</h2>
+                                <button class="btn btn-success">Edit</button>
+                                <button class="btn btn-danger">Delete</button>
+                                <p class="mt-5">{{ issue.description }}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card-body">
+                                <p class="text-secondary">Priority</p>
+                                <div>
+                                    {% if issue.priority == "1" %}
+                                        <p class="badge rounded-pill bg-danger">{{ issue.get_priority_display }}</p>
+                                    {% elif issue.priority == "2" %}
+                                        <p class="badge rounded-pill bg-warning text-dark">{{ issue.get_priority_display }}</p>
+                                    {% elif issue.priority == "3" %}
+                                        <p class="badge rounded-pill bg-primary">{{ issue.get_priority_display }}</p>
+                                    {% else %}
+                                        <p class="badge rounded-pill bg-success">{{ issue.get_priority_display }}</p>
+                                    {% endif %}
+                                </div>
+                                <p class="text-secondary">Status</p>
+                                <p class="text-black-50 ">{{ issue.get_status_display }}</p>
+                                <p class="text-secondary">Label</p>
+                                <p class="text-black-50">{{ issue.get_label_display }}</p>
+                                <p class="text-secondary">Assigned</p>
+                                <p class="text-black-50">{{ issue.assignee }}</p>
+                                <p class="text-secondary">Author</p>
+                                <p class="text-black-50">{{ issue.author }}</p>
+                                <p class="text-secondary">Project</p>
+                                <p class="text-black-50">{{ issue.project }}</p>
+                                <p class="text-secondary">Creation date</p>
+                                <p class="text-black-50">{{ issue.creation_date }}</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
       <div class="col">
-        <div class="card">
+        <div class="card shadow p-3 mb-5 bg-body rounded">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="card-body">
