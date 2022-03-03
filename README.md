@@ -12,3 +12,5 @@ that aims to simplicity and be useful for small teams that use or not agile meth
 - [x] Login and authentication
 - [x] Improve the UI 
 - [x] Improve Login template
+
+pa_autoconfigure_django.py --python=3.8 https://github.com/renataberoli/bug_catcher.git
