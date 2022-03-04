@@ -36,7 +36,7 @@ def issue_list(request):
     if assigned:
         queryset = queryset.filter(assignee=assigned)
 
-    paginator = Paginator(queryset, 15)
+    paginator = Paginator(queryset, 10)
 
     issue_data = Issue.objects.all()
     users = []
