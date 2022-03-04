@@ -1,7 +1,5 @@
 # Bug catcher
-![Django Version](https://img.shields.io/badge/Django-~3.2.10-blueviolet)
-![Bootstrap Version](https://img.shields.io/badge/Bootstrap-5-blue)
-![Pytest Version](https://img.shields.io/badge/Pytest-idn-green)
+
 
 
 [Getting started](#getting-started) •
@@ -88,8 +86,35 @@ $ python manage.py createsuperuser
 - view
 
 ## Tech stack
+![Django Version](https://img.shields.io/badge/Django-~3.2.10-blueviolet)
+![Bootstrap Version](https://img.shields.io/badge/Bootstrap-5-blue)
+![Pytest Version](https://img.shields.io/badge/Pytest-idn-green)
 
 ## Test cases
+### Scenario 1
+| Description | Test Data | Expected Result | 
+| ----------- | --------- | --------------- | 
+|-----------| -----------| -----------|
+
+<details>
+<summary>Scenario 1 - script</summary>
+</details>
+
+### Scenario 2
+| Description | Test Data | Expected Result | 
+| ----------- | --------- | --------------- | 
+|-----------| -----------| -----------|
+<details>
+<summary>Scenario 2 - script</summary>
+</details>
+
+### Scenario 3
+| Description | Test Data | Expected Result | 
+| ----------- | --------- | --------------- | 
+|-----------| -----------| -----------|
+<details>
+<summary>Scenario 3 - script</summary>
+</details>
 
 ## Roadmap
 - [x] CRUD (create, read, update and delete)
