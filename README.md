@@ -80,18 +80,18 @@ In this way you'll get the most updated version of the 'pip' package.
 $ python manage.py createsuperuser
 ```
 
-##Key Features
+## Key Features
 - list
 - add 
 - update
 - delete
 - view
 
-##Tech stack
+## Tech stack
 
-##Test cases
+## Test cases
 
-##Roadmap
+## Roadmap
 - [x] CRUD (create, read, update and delete)
 - [x] Issue list
 - [x] List pagination
@@ -100,7 +100,7 @@ $ python manage.py createsuperuser
 - [x] Improve the UI 
 - [x] Improve Login template
 
-##Contact
+## Contact
 [LinkedIn](https://www.linkedin.com/) •
 [Portfolio](https://renataberoli.github.io/) •
 [Twitter](https://twitter.com/renataberoli) 
