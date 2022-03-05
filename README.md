@@ -99,6 +99,10 @@ $ python manage.py createsuperuser
 
 <details>
 <summary>Scenario 1 - script</summary>
+
+```sh
+$
+```
 </details>
 
 ### Scenario 2
@@ -107,6 +111,10 @@ $ python manage.py createsuperuser
 |-----------| -----------| -----------|
 <details>
 <summary>Scenario 2 - script</summary>
+
+```sh
+$
+```
 </details>
 
 ### Scenario 3
@@ -115,16 +123,22 @@ $ python manage.py createsuperuser
 |-----------| -----------| -----------|
 <details>
 <summary>Scenario 3 - script</summary>
+
+```sh
+$
+```
 </details>
 
 ## Roadmap
-- [x] CRUD (create, read, update and delete)
-- [x] Issue list
-- [x] List pagination
-- [x] Functional list filters
-- [x] Login and authentication
-- [x] Improve the UI 
-- [x] Improve Login template
+- [x] Create the basic structure of the system (CRUD - create, read, update and delete).
+- [x] Create a place where the issues will be listed to the user.
+- [x] Add a pagination for this list of issues. 
+- [x] Create a series of list filters to help the user find what he wants.
+- [x] Create a login and authentication flow.
+- [x] Improve the UI to meet the mockups design before.
+- [x] Improve the software's documentation.
+- [ ] Write some basic tests to make sure that the system is working as expected.
+
 
 ## Contact
 [LinkedIn](https://www.linkedin.com/) •
