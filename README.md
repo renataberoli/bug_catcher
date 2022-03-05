@@ -1,5 +1,4 @@
-# Bug catcher
-![logo]()
+![logo](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bc-logo.png?raw=true)
 
 [Getting started](#getting-started) •
 [Installation](#installation) •
@@ -27,7 +26,7 @@ password
 This project is a Pet-project that I created to learn more about the Django framework. Bug catcher is an issue tracker 
 that aims to simplicity and be useful for small teams that use or not agile methodologies.
 
-## Features
+#### Features
 This is a very small project with only the more basic features that an issue tracker would have:
 - Issue's list
   - List's filters
@@ -38,10 +37,10 @@ This is a very small project with only the more basic features that an issue tra
 
 ![Gif home]()
 
-### Layout responsive
+#### Layout responsive
 ![Gif home]()
 
-## Tech stack
+#### Tech stack
 ![Django Version](https://img.shields.io/badge/Django-~3.2.10-blueviolet)
 ![Bootstrap Version](https://img.shields.io/badge/Bootstrap-5-blue)
 ![Pytest Version](https://img.shields.io/badge/Pytest-idn-green)
