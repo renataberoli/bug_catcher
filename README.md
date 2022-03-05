@@ -1,12 +1,15 @@
+<div align="center">
+
 ![logo](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bc-logo.png?raw=true)
 
+
 [Getting started](#getting-started) •
+[About the project](#about-the-project)  •
 [Installation](#installation) •
-[Key features](#features) •
 [Roadmap](#roadmap) •
 [Test cases](#test-cases) •
-[Tech stack](#tech-stack)  •
 [Contact](#contact)
+</div>
 
 ## Getting started
 ![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/gif%20principal.gif?raw=true)
@@ -26,15 +29,9 @@ password
 This project is a Pet-project that I created to learn more about the Django framework. Bug catcher is an issue tracker 
 that aims to simplicity and be useful for small teams that use or not agile methodologies.
 
-#### Features
-This is a very small project with only the more basic features that an issue tracker would have:
-- Issue's list
-  - List's filters
-- Issue's detail
-- Issue's creating form
-- Issue's updating form
-- Issue's delete form
+#### Sketch
 
+#### Mockup
 ![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bug%20catcher%20desktop%20mock.png?raw=true)
 
 #### Layout responsive
@@ -53,6 +50,7 @@ This is a very small project with only the more basic features that an issue tra
 $ git clone https://github.com/renataberoli/bug_catcher.git
 ```
 
+### Step 2:
 - Create a virtual environment:
 ```sh
 $ python3 -m venv myvenv
@@ -68,6 +66,7 @@ $ python -m venv myvenv
 ```
 </details>
 
+### Step 3:
 - Install the requirements:
 ````sh
 $ pip install -f requirements.txt
@@ -86,6 +85,7 @@ In this way you'll get the most updated version of the 'pip' package.
 **This command is compatible with Linux, macOS and Windows
 </details>
 
+### Step 4:
 - Create a superuser:
 ```sh
 $ python manage.py createsuperuser
@@ -138,7 +138,6 @@ $
 - [x] Improve the UI to meet the mockups design before.
 - [x] Improve the software's documentation.
 - [ ] Write some basic tests to make sure that the system is working as expected.
-
 
 ## Contact
 [LinkedIn](https://www.linkedin.com/) •
