@@ -33,6 +33,9 @@ As a designer, is common to me create a sketch from the product/system/service I
 It's a great opportunity to put the ideas on the paper and start a do some initial tests. In this case I try to keep the most 
 basic functions of an issue tracker and system with the pattern of the bootstrap framework.
 
+![Sketch](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/sketchs.png?raw=true)
+
+
 #### The solution
 As it's not a design project, so I keep the raw idea of the system and went ahead for the code to translate my sketch in 
 an interface with Bootstrap patterns.
