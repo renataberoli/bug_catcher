@@ -9,7 +9,7 @@
 [Contact](#contact)
 
 ## Getting started
-![Gif home]()
+![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/gif%20principal.gif?raw=true)
 
 ### Test a live Demo
 
