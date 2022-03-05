@@ -42,7 +42,7 @@ an interface with Bootstrap patterns.
 #### Layout responsive
 I had the attention of keep all the interfaces responsible, even the most common use of this kind of system being desktop.
 
-![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bug%20catcher%20mobile%20mock.png?raw=true)
+![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/mobile%20mock%20bc.png?raw=true)
 
 #### Tech stack
 ![Django Version](https://img.shields.io/badge/Django-~3.2.10-blueviolet)
