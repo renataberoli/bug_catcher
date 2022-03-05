@@ -13,10 +13,9 @@
                         </blockquote>
                     </div>
                     <form method="POST">{% csrf_token %}
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-                            <a class="btn btn-outline-secondary" href="{% url 'issue_detail' pk=issue.pk %}">Cancel
-                            </a>
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                        <div class="d-grid gap-2 mt-4">
+                          <a class="btn btn-danger" type="submit">I'm sure</a>
+                          <a class="btn btn-outline-secondary" type="button" href="{% url 'issue_detail' pk=issue.pk %}">Cancel</a>
                         </div>
                     </form>
                 </div>
