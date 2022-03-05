@@ -37,12 +37,12 @@ basic functions of an issue tracker and system with the pattern of the bootstrap
 As it's not a design project, so I keep the raw idea of the system and went ahead for the code to translate my sketch in 
 an interface with Bootstrap patterns.
 
-![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bug%20catcher%20desktop%20mock.png?raw=true)
+![Desktop](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bug%20catcher%20desktop%20mock.png?raw=true)
 
 #### Layout responsive
 I had the attention of keep all the interfaces responsible, even the most common use of this kind of system being desktop.
 
-![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/mobile%20mock%20bc.png?raw=true)
+![Mobile](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/mobile%20mock%20bc.png?raw=true)
 
 #### Tech stack
 ![Django Version](https://img.shields.io/badge/Django-~3.2.10-blueviolet)
