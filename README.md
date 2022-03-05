@@ -1,24 +1,15 @@
 # Bug catcher
-
-
+![logo]()
 
 [Getting started](#getting-started) •
 [Installation](#installation) •
 [Key features](#features) •
 [Roadmap](#roadmap) •
-[Test cases](#testCases) •
-[Tech stack](#stack)  •
+[Test cases](#test-cases) •
+[Tech stack](#tech-stack)  •
 [Contact](#contact)
 
 ## Getting started
-
-### About the project:
-This project is a Pet-project that I created to learn more about the Django framework. Bug catcher is an issue tracker 
-that aims to simplicity and be useful for small teams that use or not agile methodologies. 
-
-![Gif home]()
-
-### Layout responsive
 ![Gif home]()
 
 ### Test a live Demo
@@ -31,6 +22,29 @@ password
 ```sh
 123and4
 ```
+
+### About the project:
+This project is a Pet-project that I created to learn more about the Django framework. Bug catcher is an issue tracker 
+that aims to simplicity and be useful for small teams that use or not agile methodologies.
+
+## Features
+This is a very small project with only the more basic features that an issue tracker would have:
+- Issue's list
+  - List's filters
+- Issue's detail
+- Issue's creating form
+- Issue's updating form
+- Issue's delete form
+
+![Gif home]()
+
+### Layout responsive
+![Gif home]()
+
+## Tech stack
+![Django Version](https://img.shields.io/badge/Django-~3.2.10-blueviolet)
+![Bootstrap Version](https://img.shields.io/badge/Bootstrap-5-blue)
+![Pytest Version](https://img.shields.io/badge/Pytest-idn-green)
 
 ## Installation
 
@@ -77,18 +91,6 @@ In this way you'll get the most updated version of the 'pip' package.
 ```sh
 $ python manage.py createsuperuser
 ```
-
-## Key Features
-- list
-- add 
-- update
-- delete
-- view
-
-## Tech stack
-![Django Version](https://img.shields.io/badge/Django-~3.2.10-blueviolet)
-![Bootstrap Version](https://img.shields.io/badge/Bootstrap-5-blue)
-![Pytest Version](https://img.shields.io/badge/Pytest-idn-green)
 
 ## Test cases
 ### Scenario 1
