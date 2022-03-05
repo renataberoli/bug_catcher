@@ -2,7 +2,6 @@
 
 ![logo](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bc-logo.png?raw=true)
 
-
 [Getting started](#getting-started) •
 [About the project](#about-the-project)  •
 [Installation](#installation) •
@@ -16,25 +15,36 @@
 
 ### Test a live Demo
 
-user
+###### user
 ```sh
 renataberoli
 ```
-password
+###### password
 ```sh
 123and4
 ```
 
-### About the project:
+### About the project
 This project is a Pet-project that I created to learn more about the Django framework. Bug catcher is an issue tracker 
 that aims to simplicity and be useful for small teams that use or not agile methodologies.
 
 #### Sketch
+As a designer, is common to me create a sketch from the product/system/service I'm building in the beginning of the project. 
+It's a great opportunity to put the ideas on the paper and start a do some initial tests. In this case I try to keep the most 
+basic functions of an issue tracker and system with the pattern of the bootstrap framework.
 
-#### Mockup
+This is not a design project, so I keep the raw idea of the system and went ahead for the code to translate my sketch in 
+an interface with Bootstrap patterns. 
+
+
+#### The solution
+This is a final version of my system. It's a desktop app.
+
 ![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bug%20catcher%20desktop%20mock.png?raw=true)
 
 #### Layout responsive
+I had the attention of keep all the interfaces responsible, even the most common use of this kind of system being desktop.
+
 ![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bug%20catcher%20mobile%20mock.png?raw=true)
 
 #### Tech stack
@@ -44,14 +54,14 @@ that aims to simplicity and be useful for small teams that use or not agile meth
 
 ## Installation
 
-### Step 1:
-- Clone this repository:
+### Step 1
+- Clone this repository
 ```sh
 $ git clone https://github.com/renataberoli/bug_catcher.git
 ```
 
-### Step 2:
-- Create a virtual environment:
+### Step 2
+- Create a virtual environment
 ```sh
 $ python3 -m venv myvenv
 ```
@@ -66,8 +76,8 @@ $ python -m venv myvenv
 ```
 </details>
 
-### Step 3:
-- Install the requirements:
+### Step 3
+- Install the requirements
 ````sh
 $ pip install -f requirements.txt
 ````
@@ -85,8 +95,8 @@ In this way you'll get the most updated version of the 'pip' package.
 **This command is compatible with Linux, macOS and Windows
 </details>
 
-### Step 4:
-- Create a superuser:
+### Step 4
+- Create a superuser
 ```sh
 $ python manage.py createsuperuser
 ```
