@@ -35,10 +35,10 @@ This is a very small project with only the more basic features that an issue tra
 - Issue's updating form
 - Issue's delete form
 
-![Gif home]()
+![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bug%20catcher%20desktop%20mock.png?raw=true)
 
 #### Layout responsive
-![Gif home]()
+![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bug%20catcher%20mobile%20mock.png?raw=true)
 
 #### Tech stack
 ![Django Version](https://img.shields.io/badge/Django-~3.2.10-blueviolet)
