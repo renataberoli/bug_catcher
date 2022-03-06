@@ -213,9 +213,11 @@ $
 - [x] Improve the software's documentation.
 - [ ] Write some basic tests to make sure that the system is working as expected.
 
-<br>
-
 ## Contact
+<div align="center">
+
 [LinkedIn](https://www.linkedin.com/) •
 [Portfolio](https://renataberoli.github.io/) •
 [Twitter](https://twitter.com/renataberoli) 
+
+</div>
