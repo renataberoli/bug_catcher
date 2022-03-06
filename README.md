@@ -202,6 +202,8 @@ $
 ```
 </details>
 
+---
+
 ## Roadmap
 - [x] Create the basic structure of the system (CRUD - create, read, update and delete).
 - [x] Create a place where the issues will be listed to the user.
@@ -211,6 +213,8 @@ $
 - [x] Improve the UI to meet the mockups design before.
 - [x] Improve the software's documentation.
 - [ ] Write some basic tests to make sure that the system is working as expected.
+
+---
 
 ## Contact
 [LinkedIn](https://www.linkedin.com/) •
