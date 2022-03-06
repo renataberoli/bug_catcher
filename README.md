@@ -29,27 +29,30 @@ This project is a Pet-project that I created to learn more about the Django fram
 that aims to simplicity and be useful for small teams that use or not agile methodologies.
 
 #### Sketch
-As a designer, is common to me create a sketch from the product/system/service I'm building in the beginning of the project. 
-It's a great opportunity to put the ideas on the paper and start a do some initial tests. In this case I try to keep the most 
-basic functions of an issue tracker and system with the pattern of the bootstrap framework.
+The sketch is the most basic structure I design in the project. Therefore, it's an excellent opportunity to put the ideas 
+on the paper and start some initial tests. Also, working as a developer, I use the sketch to understand the information 
+architecture and draw the models I need to create for my system.
 
 ![Sketch](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/sketchs.png?raw=true)
 
+#### ERD (Entity Relationship Diagram)
+
 
 #### The solution
-As it's not a design project, so I keep the raw idea of the system and went ahead for the code to translate my sketch in 
-an interface with Bootstrap patterns.
+After sketching the interfaces and the system architecture, I went to the code to translate my sketch into an interface with Bootstrap patterns.
 
 ![Desktop](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bug%20catcher%20desktop%20mock.png?raw=true)
 
 #### Layout responsive
-I had the attention of keep all the interfaces responsible, even the most common use of this kind of system being desktop.
+My main idea for the project is a desktop system, but I was careful to keep all the interfaces responsible, as most of the web accesses are from mobile devices.
 
 ![Mobile](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/mobile%20mock%20bc.png?raw=true)
 
 #### Tech stack
 ![Django Version](https://img.shields.io/badge/Django-~3.2.10-blueviolet)
 ![Bootstrap Version](https://img.shields.io/badge/Bootstrap-5-blue)
+![HTML](https://img.shields.io/badge/HTML-5-red)
+![CSS](https://img.shields.io/badge/CSS-3-yellow)
 ![Pytest Version](https://img.shields.io/badge/Pytest-idn-green)
 
 ## Installation
