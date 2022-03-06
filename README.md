@@ -13,7 +13,7 @@
 ## Getting started
 ![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/gif%20principal.gif?raw=true)
 
-### Test a live Demo
+### Try a live Demo
 
 ###### user
 ```sh
@@ -103,9 +103,10 @@ $ python manage.py createsuperuser
 
 ## Test cases
 ### Scenario 1
+###### test_search_filter
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
-|-----------| -----------| -----------|
+|This test aims to check if the search field works as expected.|Use: “error” as the search argument.|The system will return only issues with “error” in some parts of the title.|
 
 <details>
 <summary>Scenario 1 - script</summary>
@@ -116,9 +117,10 @@ $
 </details>
 
 ### Scenario 2
+###### test_priority_filter
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
-|-----------| -----------| -----------|
+|The test aims to check if the priority field works as expected.|Use: “low” as the field’s option.|The system will return only issues with “low” priority.|
 <details>
 <summary>Scenario 2 - script</summary>
 
@@ -128,9 +130,62 @@ $
 </details>
 
 ### Scenario 3
+###### test_status_filter
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
-|-----------| -----------| -----------|
+|The test aims to check if the status field works as expected.|Use: “closed” as the field’s option.|The system will return only issues with the status “closed”.|
+<details>
+<summary>Scenario 3 - script</summary>
+
+```sh
+$
+```
+</details>
+
+### Scenario 4
+###### test_label_filter
+| Description | Test Data | Expected Result | 
+| ----------- | --------- | --------------- | 
+|The test aims to check if the label field works as expected.|Use: “back-end” as the field’s option.|The system will return only issues with the label “back-end”.|
+<details>
+<summary>Scenario 3 - script</summary>
+
+```sh
+$
+```
+</details>
+
+### Scenario 5
+###### test_assigned_filter
+| Description | Test Data | Expected Result | 
+| ----------- | --------- | --------------- | 
+|The test aims to check if the assigned field works as expected.|Use: “voorloopnul” as the field’s option.|The system will return only issues assigned to “voorloopnul”.|
+<details>
+<summary>Scenario 3 - script</summary>
+
+```sh
+$
+```
+</details>
+
+### Scenario 6
+###### test_all_filters_together
+| Description | Test Data | Expected Result | 
+| ----------- | --------- | --------------- | 
+|The test aims to check if all the list filters work together as expected.|Use: search argument - “error”; priority - “high”; status - “open”; label - “front-end”; assigned - “voorloopnul”.|The system will show only the issue that matches all the filter's arguments.|
+<details>
+<summary>Scenario 3 - script</summary>
+
+```sh
+$
+```
+</details>
+
+### Scenario 7
+###### test_login_success
+| Description | Test Data | Expected Result | 
+| ----------- | --------- | --------------- | 
+|The test aims to check if the user will be redirected to the main page if the successful login.|Use: user - “renataberoli”; password - “123and4”.|The user will be redirected to the “list of issues” page..|
 <details>
 <summary>Scenario 3 - script</summary>
 
