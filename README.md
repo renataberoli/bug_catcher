@@ -23,6 +23,7 @@ renataberoli
 ```sh
 123and4
 ```
+---
 
 ### About the project
 This project is a Pet-project that I created to learn more about the Django framework. Bug catcher is an issue tracker 
@@ -54,6 +55,8 @@ My main idea for the project is a desktop system, but I was careful to keep all 
 ![HTML](https://img.shields.io/badge/HTML-5-red)
 ![CSS](https://img.shields.io/badge/CSS-3-yellow)
 ![Pytest Version](https://img.shields.io/badge/Pytest-idn-green)
+
+---
 
 ## Installation
 
@@ -103,6 +106,8 @@ In this way you'll get the most updated version of the 'pip' package.
 ```sh
 $ python manage.py createsuperuser
 ```
+
+---
 
 ## Test cases
 ### Scenario 1
