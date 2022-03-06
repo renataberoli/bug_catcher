@@ -211,11 +211,12 @@ $
 - [x] Create a login and authentication flow.
 - [x] Improve the UI to meet the mockups design before.
 - [x] Improve the software's documentation.
-- [ ] Write some basic tests to make sure that the system is working as expected.
+- [x] Write some basic tests to make sure that the system is working as expected.
 
-## Contact
+
 <div align="center">
 
+## Contact
 [LinkedIn](https://www.linkedin.com/) •
 [Portfolio](https://renataberoli.github.io/) •
 [Twitter](https://twitter.com/renataberoli) 
