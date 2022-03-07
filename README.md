@@ -13,3 +13,6 @@ that aims to simplicity and be useful for small teams that use or not agile meth
 - [x] Improve the UI 
 - [x] Improve Login template
 
+
+Test comment: The second page lost the "order_by = priority" filter, and some issues could be lost.
+
