@@ -23,4 +23,21 @@ class BcTestCase(TestCase):
         response = self.client.post('/accounts/login/', {'username': 'renataberoli', 'password': '123and4'})
         self.assertRedirects(response, '/')
 
+    def test_search_filter(self):
+        pass
+
+    def test_priority_filter(self):
+        pass
+
+    def test_status_filter(self):
+        pass
+
+    def test_label_filter(self):
+        pass
+
+    def test_assigned_filter(self):
+        pass
+
+    def test_all_filters_together(self):
+        pass
 
