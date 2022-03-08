@@ -24,7 +24,9 @@ class BcTestCase(TestCase):
         self.assertRedirects(response, '/')
 
     def test_search_filter(self):
-        pass
+        logged_in = self.client.login(username='renataberoli', password='123and4')
+        response = self.client.get('/', {'data': 'error'})
+        print(f" response {response.content}")
 
     def test_priority_filter(self):
         pass
