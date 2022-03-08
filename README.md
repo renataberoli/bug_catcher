@@ -190,10 +190,23 @@ $
 </details>
 
 ### Scenario 7
+###### test_login_failed
+| Description | Test Data | Expected Result | 
+| ----------- | --------- | --------------- | 
+|The test aims to check if the user can access the system with wrong credentials.|Use: user - “beroli”; password - “1234”.|The system will show a message that the credentials are wrong.|
+<details>
+<summary>Scenario 3 - script</summary>
+
+```sh
+$
+```
+</details>
+
+### Scenario 8
 ###### test_login_success
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
-|The test aims to check if the user will be redirected to the main page if the successful login.|Use: user - “renataberoli”; password - “123and4”.|The user will be redirected to the “list of issues” page..|
+|The test aims to check if the user will be redirected to the main page if the successful login.|Use: user - “renataberoli”; password - “123and4”.|The user will be redirected to the “list of issues” page.|
 <details>
 <summary>Scenario 3 - script</summary>
 
