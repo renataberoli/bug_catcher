@@ -1,6 +1,8 @@
 from django.test import TestCase
 from django.test import Client
 from django.contrib.auth import get_user_model
+from .models import Issue
+from django.utils import timezone
 
 User = get_user_model()
 
@@ -12,7 +14,6 @@ class BcTestCase(TestCase):
         user = User.objects.create(username='renataberoli')
         user.set_password('123and4')
         user.save()
-
         return user
 
     def test_login_failed(self):
@@ -25,8 +26,13 @@ class BcTestCase(TestCase):
 
     def test_search_filter(self):
         logged_in = self.client.login(username='renataberoli', password='123and4')
-        response = self.client.get('/', {'data': 'error'})
-        print(f" response {response.content}")
+
+        user = User.objects.get(username="renataberoli")
+        date = timezone.now()
+        issue = Issue.objects.create(title='Slow internet in floripa', author=user, creation_date=date)
+
+        self.assertIn('floripa', issue.title)
+        print(f"Issue title: {issue.title}")
 
     def test_priority_filter(self):
         pass
