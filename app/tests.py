@@ -29,10 +29,17 @@ class BcTestCase(TestCase):
 
         user = User.objects.get(username="renataberoli")
         date = timezone.now()
-        issue = Issue.objects.create(title='Slow internet in floripa', author=user, creation_date=date)
+        Issue.objects.create(title='Slow internet in floripa', author=user, creation_date=date)
+        Issue.objects.create(title='Teste title 2', author=user, creation_date=date)
 
-        self.assertIn('floripa', issue.title)
-        print(f"Issue title: {issue.title}")
+        all_issues = Issue.objects.all()
+        print(f"All issues: {all_issues}")
+
+        for issue in all_issues:
+
+            self.assertIn('floripa', issue.title)
+
+
 
     def test_priority_filter(self):
         pass
