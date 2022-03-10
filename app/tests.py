@@ -57,14 +57,19 @@ class BcTestCase(TestCase):
         self.assertIn(b"Test issue with status closed", response.content)
         self.assertNotIn(b"Test issue with status open", response.content)
 
-    def test_label_filter(self):
-        pass
-
-    def test_assigned_filter(self):
-        pass
-
     def test_all_filters_together(self):
-        pass
+        user = User.objects.get(username="renataberoli")
+        Issue.objects.create(title='Test issue with all arguments - error', author=user, priority='1', status='open',
+                             label='frontend', assignee=user)
+        Issue.objects.create(title='Test issue without data arguments', author=user, priority='1', status='open',
+                             label='frontend', assignee=user)
+
+        self.client.login(username='renataberoli', password='123and4')
+        response = self.client.get('/', {'data': 'error', 'priority': '1', 'status': 'open', 'label': 'frontend',
+                                         'assignee': user.id})
+
+        self.assertIn(b"Test issue with all arguments - error", response.content)
+        self.assertNotIn(b"Test issue without data arguments", response.content)
 
     def test_issue_creation(self):
         user = User.objects.get(username="renataberoli")
