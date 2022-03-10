@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.test import Client
 from django.contrib.auth import get_user_model
-from .models import Issue
+from .models import Issue, Project
 from django.utils import timezone
 
 User = get_user_model()
@@ -68,9 +68,11 @@ class BcTestCase(TestCase):
 
     def test_issue_creation(self):
         user = User.objects.get(username="renataberoli")
-        date = timezone.now()
 
         self.client.login(username='renataberoli', password='123and4')
-        response = self.client.post('/issue/new/', {'title': 'Test issue if issue is created', 'author': user,
-                                                    'creation_date': date, 'status': 'open'})
-        print(f"response: {response.content}")
+        project = Project.objects.create(name='Acme')
+        response = self.client.post('/issue/new/', {'title': 'Test issue if issue is created', 'assignee': user.id,
+                                                    'project': project.id, 'status': 'open'})
+
+        issue = Issue.objects.get(title='Test issue if issue is created')
+        self.assertRedirects(response, f'/issue/{issue.id}/')
