@@ -25,27 +25,37 @@ class BcTestCase(TestCase):
         self.assertRedirects(response, '/')
 
     def test_search_filter(self):
-        logged_in = self.client.login(username='renataberoli', password='123and4')
-
         user = User.objects.get(username="renataberoli")
         date = timezone.now()
-        Issue.objects.create(title='Slow internet in floripa', author=user, creation_date=date)
+        Issue.objects.create(title='Slow internet error', author=user, creation_date=date)
         Issue.objects.create(title='Teste title 2', author=user, creation_date=date)
 
-        all_issues = Issue.objects.all()
-        print(f"All issues: {all_issues}")
-
-        for issue in all_issues:
-
-            self.assertIn('floripa', issue.title)
-
-
+        self.client.login(username='renataberoli', password='123and4')
+        response = self.client.get("/", {"data": "error"})
+        self.assertIn(b"Slow internet error", response.content)
+        self.assertNotIn(b"Teste title 2", response.content)
 
     def test_priority_filter(self):
-        pass
+        user = User.objects.get(username="renataberoli")
+        date = timezone.now()
+        Issue.objects.create(title='Test issue with priority urgent', author=user, creation_date=date, priority='1')
+        Issue.objects.create(title='Test issue with priority normal', author=user, creation_date=date, priority='3')
+
+        self.client.login(username='renataberoli', password='123and4')
+        response = self.client.get('/', {'priority': '1'})
+        self.assertIn(b"Test issue with priority urgent", response.content)
+        self.assertNotIn(b"Test issue with priority normal", response.content)
 
     def test_status_filter(self):
-        pass
+        user = User.objects.get(username="renataberoli")
+        date = timezone.now()
+        Issue.objects.create(title='Test issue with status closed', author=user, creation_date=date, status='closed')
+        Issue.objects.create(title='Test issue with status open', author=user, creation_date=date, status='open')
+
+        self.client.login(username='renataberoli', password='123and4')
+        response = self.client.get('/', {'status': 'closed'})
+        self.assertIn(b"Test issue with status closed", response.content)
+        self.assertNotIn(b"Test issue with status open", response.content)
 
     def test_label_filter(self):
         pass
@@ -56,3 +66,11 @@ class BcTestCase(TestCase):
     def test_all_filters_together(self):
         pass
 
+    def test_issue_creation(self):
+        user = User.objects.get(username="renataberoli")
+        date = timezone.now()
+
+        self.client.login(username='renataberoli', password='123and4')
+        response = self.client.post('/issue/new/', {'title': 'Test issue if issue is created', 'author': user,
+                                                    'creation_date': date, 'status': 'open'})
+        print(f"response: {response.content}")

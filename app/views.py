@@ -50,12 +50,12 @@ def issue_list(request):
 
     return render(request, 'issue/issues_list.html', {'page_obj': page_obj, 'users': users})
 
-
+@login_required
 def issue_detail(request, pk):
     issue = get_object_or_404(Issue, pk=pk)
     return render(request, 'issue/issue_detail.html', {'issue': issue})
 
-
+@login_required
 def issue_new(request):
     if request.method == "POST":
         form = IssueForm(request.POST)
@@ -69,7 +69,7 @@ def issue_new(request):
         form = IssueForm()
     return render(request, 'issue/issue_edit.html', {'form': form})
 
-
+@login_required
 def issue_edit(request, pk):
     issue = get_object_or_404(Issue, pk=pk)
     if request.method == "POST":
@@ -83,7 +83,7 @@ def issue_edit(request, pk):
         form = IssueForm(instance=issue)
     return render(request, 'issue/issue_edit.html', {'form': form})
 
-
+@login_required
 def issue_delete(request, pk):
     issue = get_object_or_404(Issue, pk=pk)
     if request.method == "POST":
