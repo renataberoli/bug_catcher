@@ -116,7 +116,7 @@ $ python manage.py createsuperuser
 |The test aims to check if the user can access the system if the login is failed. |Use: username - “beroli”; password - “1234”|The system will return an error asking the user to enter a correct username.|
 
 <details>
-<summary>Script - test_login_failed</summary>
+<summary>Code - test_login_failed</summary>
 
 ```sh
 response = self.client.post('/accounts/login/', {'username': 'beroli', 'password': '1234'})
@@ -130,7 +130,7 @@ self.assertIn(b"correct username", response.content)
 |The test aims to check if the user will be redirected to the main page if the successful login.|Use:  username - “renataberoli”; password - “123and4”|The user will be redirected to the “list of issues” page.|
 
 <details>
-<summary>Script - test_login_success</summary>
+<summary>Code - test_login_success</summary>
 
 ```sh
 response = self.client.post('/accounts/login/', {'username': 'renataberoli', 'password': '123and4'})
@@ -145,7 +145,7 @@ self.assertRedirects(response, '/')
 |This test aims to check if the search field works as expected.|Use: Use: “error” as the search argument.|The system will return only issues with “error” in some parts of the title.|
 
 <details>
-<summary>Script - test_search_filter</summary>
+<summary>Code - test_search_filter</summary>
 
 ```sh
 user = User.objects.get(username="renataberoli")
@@ -167,7 +167,7 @@ self.assertNotIn(b"Teste title 2", response.content)
 |The test aims to check if the priority field works as expected.|Use: Use: “urgent” as the field’s option.|The system will return only issues with “Urgent” priority.|
 
 <details>
-<summary>Script - test_priority_filter</summary>
+<summary>Code - test_priority_filter</summary>
 
 ```sh
 user = User.objects.get(username="renataberoli")
@@ -188,7 +188,7 @@ self.assertNotIn(b"Test issue with priority normal", response.content)
 | ----------- | --------- | --------------- | 
 |The test aims to check if the status field works as expected.|Use: Use: “closed” as the field’s option.|The system will return only issues with the status “closed”.|
 <details>
-<summary>Script - test_status_filter</summary>
+<summary>Code - test_status_filter</summary>
 
 ```sh
 user = User.objects.get(username="renataberoli")
@@ -209,7 +209,7 @@ self.assertNotIn(b"Test issue with status open", response.content)
 | ----------- | --------- | --------------- | 
 |The test aims to check if all the list filters work together as expected.|Use: search argument - “error”; priority - “urgent”; status - “open”; label - “frontend”; assigned - “renataberoli”.|The system will show only the issue that matches all the filter's arguments.|
 <details>
-<summary>Script - test_all_filters_together</summary>
+<summary>Code - test_all_filters_together</summary>
 
 ```sh
 user = User.objects.get(username="renataberoli")
@@ -235,7 +235,7 @@ self.assertNotIn(b"Test issue without data arguments", response.content)
 |The test aims to check if the issue's creation is working as expected.|Use: title - “Test issue if issue is created”; project - “Acme”; status - “open”; assignee - “renataberoli”.|The system will create a new issue and redirect the user to the detail view.|
 
 <details>
-<summary>Script - test_issue_creation</summary>
+<summary>Code - test_issue_creation</summary>
 
 ```sh
 user = User.objects.get(username="renataberoli")
