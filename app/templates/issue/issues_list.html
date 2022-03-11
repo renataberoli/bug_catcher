@@ -1,15 +1,23 @@
 {% extends 'issue/base.html' %}
 
 {% block content %}
+                                                         
+{{request.GET}}
+{{request.GET.data}}
+{{request.GET.data.0}}
     <div class="card mt-3 shadow p-3 mb-5 bg-body rounded">
-        <div class="card-body">
+        <div class="card-body">                                                          
             <h1>Issues List</h1>
             <div class="row">
                 <div class="col-md">
                     <form class="row g-4" action="." method="GET">
                         <div class="col-sm-12 col-md-12 col-lg-3">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Search Issue by title" name="data">
+                               <input type="text" class="form-control" id="floatingInput"
+                                    placeholder="Search Issue by title" name="data">
+                                    {% if request.GET.data %}
+                                        {{ request.GET.data }}
+                                    {% endif %}
                                 <label class="text-secondary" for="floatingInput">Search Issue by title</label>
                             </div>
                         </div>
@@ -17,10 +25,14 @@
                             <div class="form-floating">
                                 <select class="form-select" id="floatingSelect" aria-label="Priority select" name="priority">
                                     <option></option>
-                                    <option value="1">Urgent</option>
-                                    <option value="2">High</option>
-                                    <option value="3">Normal</option>
-                                    <option value="4">Low</option>
+                                    <option value="1" {% if request.GET.priority.0 == '1' %} selected {% endif %}>Urgent
+                                    </option>
+                                    <option value="2" {% if request.GET.priority.0 == '2' %} selected {% endif %}>High
+                                    </option>
+                                    <option value="3" {% if request.GET.priority.0 == '3' %} selected {% endif %}>Normal
+                                    </option>
+                                    <option value="4" {% if request.GET.priority.0 == '4' %} selected {% endif %}>Low
+                                    </option>
                                 </select>
                                 <label for="floatingSelect">Issue's priority</label>
                             </div>
@@ -29,9 +41,12 @@
                             <div class=" form-floating">
                                 <select class="form-select" id="floatingSelect2" aria-label="Status select" name="status">
                                     <option></option>
-                                    <option value="open">Open</option>
-                                    <option value="pending">Pending</option>
-                                    <option value="closed">Closed</option>
+                                    <option value="open" {% if request.GET.status == 'open' %} selected {% endif %}>
+                                    Open</option>
+                                    <option value="pending" {% if request.GET.status == 'pending' %} selected
+                                    {% endif %}>Pending</option>
+                                    <option value="closed" {% if request.GET.status == 'closed' %} selected {% endif %}>
+                                    Closed</option>
                                 </select>
                                 <label for="floatingInput">Issue's status</label>
                             </div>
@@ -40,10 +55,15 @@
                             <div class="form-floating">
                                 <select class="form-select" id="floatingSelect3" aria-label="label select" name="label">
                                     <option></option>
-                                    <option value="frontend">Front-end</option>
-                                    <option value="backend">Back-end</option>
-                                    <option value="design">Design</option>
-                                    <option value="operational">Operational</option>
+                                    <option value="frontend" {% if request.GET.label == 'frontend' %} selected
+                                    {% endif %}
+                                    >Front-end</option>
+                                    <option value="backend" {% if request.GET.label == 'backend' %} selected
+                                    {% endif %}>Back-end</option>
+                                    <option value="design" {% if request.GET.label == 'design' %} selected
+                                    {% endif %}>Design</option>
+                                    <option value="operational" {% if request.GET.label == 'operational' %} selected
+                                    {% endif %}>Operational</option>
                                 </select>
                                 <label for="floatingInput">Issue's label</label>
                             </div>
@@ -53,7 +73,10 @@
                                 <select class="form-select" id="floatingSelect4" aria-label="Assigned to me" name="assigned">
                                     <option></option>
                                     {% for user in users %}
-                                    <option value="{{ user.id }}">{{ user }}</option>
+                                        <option value="{{ user.id }}" {% if request.GET.assigned.0 == user.id|slugify %}
+                                                selected
+                                            {% endif %}> {{ user }}
+                                        </option>
                                     {% endfor %}
                                 </select>
                                 <label for="floatingInput">Issue's assigned user</label>
