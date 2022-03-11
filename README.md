@@ -114,7 +114,7 @@ $ python manage.py createsuperuser
 ###### test_login_failed
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
-||Use: ||
+|The test aims to check if the user can access the system if the login is failed. |Use: username - “beroli”; password - “1234”|The system will return an error asking the user to enter a correct username.|
 
 <details>
 <summary>Script - test_login_failed</summary>
