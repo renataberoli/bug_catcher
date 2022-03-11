@@ -50,11 +50,10 @@ My main idea for the project is a desktop system, but I was careful to keep all 
 ![Mobile](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/mobile%20mock%20bc.png?raw=true)
 
 #### Tech stack
-![Django Version](https://img.shields.io/badge/Django-~3.2.10-blueviolet)
+![Django Version](https://img.shields.io/badge/Django-~4.0.3-blueviolet)
 ![Bootstrap Version](https://img.shields.io/badge/Bootstrap-5-blue)
 ![HTML](https://img.shields.io/badge/HTML-5-red)
 ![CSS](https://img.shields.io/badge/CSS-3-yellow)
-![Pytest Version](https://img.shields.io/badge/Pytest-idn-green)
 
 <br>
 
