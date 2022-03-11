@@ -151,32 +151,6 @@ $
 </details>
 
 ### Scenario 4
-###### test_label_filter
-| Description | Test Data | Expected Result | 
-| ----------- | --------- | --------------- | 
-|The test aims to check if the label field works as expected.|Use: “back-end” as the field’s option.|The system will return only issues with the label “back-end”.|
-<details>
-<summary>Scenario 3 - script</summary>
-
-```sh
-$
-```
-</details>
-
-### Scenario 5
-###### test_assigned_filter
-| Description | Test Data | Expected Result | 
-| ----------- | --------- | --------------- | 
-|The test aims to check if the assigned field works as expected.|Use: “voorloopnul” as the field’s option.|The system will return only issues assigned to “voorloopnul”.|
-<details>
-<summary>Scenario 3 - script</summary>
-
-```sh
-$
-```
-</details>
-
-### Scenario 6
 ###### test_all_filters_together
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
@@ -189,7 +163,7 @@ $
 ```
 </details>
 
-### Scenario 7
+### Scenario 5
 ###### test_login_failed
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
@@ -202,7 +176,7 @@ $
 ```
 </details>
 
-### Scenario 8
+### Scenario 6
 ###### test_login_success
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
@@ -214,6 +188,33 @@ $
 $
 ```
 </details>
+
+### Scenario 7
+###### test_login_fail
+| Description | Test Data | Expected Result | 
+| ----------- | --------- | --------------- | 
+|The test aims to check if the user will be redirected to the main page if the successful login.|Use: user - “renataberoli”; password - “123and4”.|The user will be redirected to the “list of issues” page.|
+<details>
+<summary>Scenario 3 - script</summary>
+
+```sh
+$
+```
+</details>
+
+### Scenario 8
+###### test_create_issue
+| Description | Test Data | Expected Result | 
+| ----------- | --------- | --------------- | 
+|The test aims to check if .|Use: user - “renataberoli”; password - “123and4”.|The user will be redirected to the “list of issues” page.|
+<details>
+<summary>Scenario 3 - script</summary>
+
+```sh
+$
+```
+</details>
+
 <br>
 
 ## Roadmap
