@@ -251,7 +251,7 @@ self.assertRedirects(response, f'/issue/{issue.id}/')
 <br>
 
 ## Roadmap
-- [x] Create the basic structure of the system (CRUD - create, read, update and delete).
+- [x] Create the basic structure of the system (CRUD - create, retrieve, update and delete).
 - [x] Create a place where the issues will be listed to the user.
 - [x] Add a pagination for this list of issues. 
 - [x] Create a series of list filters to help the user find what he wants.
