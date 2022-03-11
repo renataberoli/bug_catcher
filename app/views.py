@@ -15,7 +15,7 @@ def issue_list(request):
     assigned = request.GET.get("assigned")
 
     if not request.GET:
-        queryset = Issue.objects.filter(status="open").order_by("priority")
+        queryset = Issue.objects.filter(status="open")
 
     else:
         queryset = Issue.objects.all()
@@ -36,7 +36,7 @@ def issue_list(request):
     if assigned:
         queryset = queryset.filter(assignee=assigned)
 
-    paginator = Paginator(queryset, 12)
+    paginator = Paginator(queryset.order_by('priority'), 12)
 
     issue_data = Issue.objects.all()
     users = []

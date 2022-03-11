@@ -81,3 +81,4 @@ class BcTestCase(TestCase):
 
         issue = Issue.objects.get(title='Test issue if issue is created')
         self.assertRedirects(response, f'/issue/{issue.id}/')
+
