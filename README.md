@@ -36,9 +36,6 @@ architecture and draw the models I need to create for my system.
 
 ![Sketch](https://github.com/renataberoli/bug_catcher/blob/main/app/static/img/sketchs.png?raw=true)
 
-#### ERD (Entity Relationship Diagram)
-
-
 #### The solution
 After sketching the interfaces and the system architecture, I went to the code to translate my sketch into an interface with Bootstrap patterns.
 
