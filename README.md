@@ -1,17 +1,17 @@
 <div align="center">
 
-![logo](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bc-logo.png?raw=true)
+![logo](https://github.com/renataberoli/bug_catcher/blob/main/app/static/img/bc-logo.png?raw=true)
 
 [Getting started](#getting-started) •
 [About the project](#about-the-project)  •
 [Installation](#installation) •
-[Roadmap](#roadmap) •
 [Test cases](#test-cases) •
+[Roadmap](#roadmap) •
 [Contact](#contact)
 </div>
 
 ## Getting started
-![Gif home](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/gif%20principal.gif?raw=true)
+![Gif home](https://github.com/renataberoli/bug_catcher/blob/main/app/static/img/gif%20principal.gif?raw=true)
 
 ### Try a live Demo
 
@@ -34,7 +34,7 @@ The sketch is the most basic structure I design in the project. Therefore, it's 
 on the paper and start some initial tests. Also, working as a developer, I use the sketch to understand the information 
 architecture and draw the models I need to create for my system.
 
-![Sketch](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/sketchs.png?raw=true)
+![Sketch](https://github.com/renataberoli/bug_catcher/blob/main/app/static/img/sketchs.png?raw=true)
 
 #### ERD (Entity Relationship Diagram)
 
@@ -42,12 +42,12 @@ architecture and draw the models I need to create for my system.
 #### The solution
 After sketching the interfaces and the system architecture, I went to the code to translate my sketch into an interface with Bootstrap patterns.
 
-![Desktop](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/bug%20catcher%20desktop%20mock.png?raw=true)
+![Desktop](https://github.com/renataberoli/bug_catcher/blob/main/app/static/img/bug%20catcher%20desktop%20mock.png?raw=true)
 
 #### Layout responsive
 My main idea for the project is a desktop system, but I was careful to keep all the interfaces responsible, as most of the web accesses are from mobile devices.
 
-![Mobile](https://github.com/renataberoli/bug_catcher/blob/dev/app/static/img/mobile%20mock%20bc.png?raw=true)
+![Mobile](https://github.com/renataberoli/bug_catcher/blob/main/app/static/img/mobile%20mock%20bc.png?raw=true)
 
 #### Tech stack
 ![Django Version](https://img.shields.io/badge/Django-~4.0.3-blueviolet)
