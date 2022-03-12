@@ -109,34 +109,21 @@ $ python manage.py createsuperuser
 <br>
 
 ## Test cases
+
+<details>
+<summary>Details</summary>
+
 ### Scenario 1 - Login
 ###### test_login_failed
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
 |The test aims to check if the user can access the system if the login is failed. |Use: username - “beroli”; password - “1234”|The system will return an error asking the user to enter a correct username.|
 
-<details>
-<summary>Code - test_login_failed</summary>
-
-```sh
-response = self.client.post('/accounts/login/', {'username': 'beroli', 'password': '1234'})
-self.assertIn(b"correct username", response.content)
-```
-</details>
 
 ###### test_login_success
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
 |The test aims to check if the user will be redirected to the main page if the successful login.|Use:  username - “renataberoli”; password - “123and4”|The user will be redirected to the “list of issues” page.|
-
-<details>
-<summary>Code - test_login_success</summary>
-
-```sh
-response = self.client.post('/accounts/login/', {'username': 'renataberoli', 'password': '123and4'})
-self.assertRedirects(response, '/')
-```
-</details>
 
 ### Scenario 2 - List filters
 ###### test_search_filter
@@ -144,89 +131,20 @@ self.assertRedirects(response, '/')
 | ----------- | --------- | --------------- | 
 |This test aims to check if the search field works as expected.|Use: Use: “error” as the search argument.|The system will return only issues with “error” in some parts of the title.|
 
-<details>
-<summary>Code - test_search_filter</summary>
-
-```sh
-user = User.objects.get(username="renataberoli")
-date = timezone.now()
-Issue.objects.create(title='Slow internet error', author=user, creation_date=date)
-Issue.objects.create(title='Teste title 2', author=user, creation_date=date)
-
-self.client.login(username='renataberoli', password='123and4')
-response = self.client.get("/", {"data": "error"})
-self.assertIn(b"Slow internet error", response.content)
-self.assertNotIn(b"Teste title 2", response.content)
-
-```
-</details>
-
 ###### test_priority_filter
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
 |The test aims to check if the priority field works as expected.|Use: Use: “urgent” as the field’s option.|The system will return only issues with “Urgent” priority.|
 
-<details>
-<summary>Code - test_priority_filter</summary>
-
-```sh
-user = User.objects.get(username="renataberoli")
-date = timezone.now()
-Issue.objects.create(title='Test issue with priority urgent', author=user, creation_date=date, priority='1')
-Issue.objects.create(title='Test issue with priority normal', author=user, creation_date=date, priority='3')
-
-self.client.login(username='renataberoli', password='123and4')
-response = self.client.get('/', {'priority': '1'})
-self.assertIn(b"Test issue with priority urgent", response.content)
-self.assertNotIn(b"Test issue with priority normal", response.content)
-
-```
-</details>
-
 ###### test_status_filter
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
 |The test aims to check if the status field works as expected.|Use: Use: “closed” as the field’s option.|The system will return only issues with the status “closed”.|
-<details>
-<summary>Code - test_status_filter</summary>
-
-```sh
-user = User.objects.get(username="renataberoli")
-date = timezone.now()
-Issue.objects.create(title='Test issue with status closed', author=user, creation_date=date, status='closed')
-Issue.objects.create(title='Test issue with status open', author=user, creation_date=date, status='open')
-
-self.client.login(username='renataberoli', password='123and4')
-response = self.client.get('/', {'status': 'closed'})
-self.assertIn(b"Test issue with status closed", response.content)
-self.assertNotIn(b"Test issue with status open", response.content)
-
-```
-</details>
 
 ###### test_all_filters_together
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
 |The test aims to check if all the list filters work together as expected.|Use: search argument - “error”; priority - “urgent”; status - “open”; label - “frontend”; assigned - “renataberoli”.|The system will show only the issue that matches all the filter's arguments.|
-<details>
-<summary>Code - test_all_filters_together</summary>
-
-```sh
-user = User.objects.get(username="renataberoli")
-Issue.objects.create(title='Test issue with all arguments - error', author=user, priority='1', status='open',
-                     label='frontend', assignee=user)
-Issue.objects.create(title='Test issue without data arguments', author=user, priority='1', status='open',
-                     label='frontend', assignee=user)
-
-self.client.login(username='renataberoli', password='123and4')
-response = self.client.get('/', {'data': 'error', 'priority': '1', 'status': 'open', 'label': 'frontend',
-                                 'assignee': user.id})
-
-self.assertIn(b"Test issue with all arguments - error", response.content)
-self.assertNotIn(b"Test issue without data arguments", response.content)
-
-```
-</details>
 
 ### Scenario 3 - Create issue
 ###### test_issue_creation
@@ -234,19 +152,6 @@ self.assertNotIn(b"Test issue without data arguments", response.content)
 | ----------- | --------- | --------------- | 
 |The test aims to check if the issue's creation is working as expected.|Use: title - “Test issue if issue is created”; project - “Acme”; status - “open”; assignee - “renataberoli”.|The system will create a new issue and redirect the user to the detail view.|
 
-<details>
-<summary>Code - test_issue_creation</summary>
-
-```sh
-user = User.objects.get(username="renataberoli")
-self.client.login(username='renataberoli', password='123and4')
-project = Project.objects.create(name='Acme')
-response = self.client.post('/issue/new/', {'title': 'Test issue if issue is created', 'assignee': user.id,
-                                            'project': project.id, 'status': 'open'})
-issue = Issue.objects.get(title='Test issue if issue is created')
-self.assertRedirects(response, f'/issue/{issue.id}/')
-
-```
 </details>
 <br>
 
