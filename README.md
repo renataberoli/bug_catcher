@@ -119,7 +119,6 @@ $ python manage.py createsuperuser
 | ----------- | --------- | --------------- | 
 |The test aims to check if the user can access the system if the login is failed. |Use: username - “beroli”; password - “1234”|The system will return an error asking the user to enter a correct username.|
 
-
 ###### test_login_success
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
@@ -170,7 +169,7 @@ $ python manage.py createsuperuser
 <div align="center">
 
 ## Contact
-[LinkedIn](https://www.linkedin.com/) •
+[LinkedIn](https://www.linkedin.com/in/renataberoli/) •
 [Portfolio](https://renataberoli.github.io/) •
 [Twitter](https://twitter.com/renataberoli) 
 
