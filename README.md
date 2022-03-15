@@ -27,22 +27,25 @@ renataberoli
 
 ### About the project
 This project is a Pet-project that I created to learn more about the Django framework. Bug catcher is an issue tracker 
-that aims to simplicity and be useful for small teams that use or not agile methodologies.
+that that aims to simplify and be of better use for small teams, despite agile methodologies usage.
 
 #### Sketch
-The sketch is the most basic structure I design in the project. Therefore, it's an excellent opportunity to put the ideas 
-on the paper and start some initial tests. Also, working as a developer, I use the sketch to understand the information 
-architecture and draw the models I need to create for my system.
+
+The sketch is the most basic structure I designed within the project. Therefore, it's an excellent opportunity to put 
+the ideas on paper and start initial tests. Also, working as a developer, I use the sketch to understand structures of
+information and draw the models I need in order to create my system.
 
 ![Sketch](https://github.com/renataberoli/bug_catcher/blob/main/app/static/img/sketchs.png?raw=true)
 
 #### The solution
-After sketching the interfaces and the system architecture, I went to the code to translate my sketch into an interface with Bootstrap patterns.
+After sketching the interfaces and the system architecture, I translate my sketch into a coding interface with Bootstrap 
+patterns.
 
 ![Desktop](https://github.com/renataberoli/bug_catcher/blob/main/app/static/img/bug%20catcher%20desktop%20mock.png?raw=true)
 
-#### Layout responsive
-My main idea for the project is a desktop system, but I was careful to keep all the interfaces responsible, as most of the web accesses are from mobile devices.
+#### Responsive layout
+My main objective for the project is creating a desktop system. I was careful to keep all the interfaces responsible, 
+as most of the web accesses are from mobile devices.
 
 ![Mobile](https://github.com/renataberoli/bug_catcher/blob/main/app/static/img/mobile%20mock%20bc.png?raw=true)
 
@@ -114,12 +117,12 @@ $ python manage.py createsuperuser
 ###### test_login_failed
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
-|The test aims to check if the user can access the system if the login is failed. |Use: username - “beroli”; password - “1234”|The system will return an error asking the user to enter a correct username.|
+|The test aims to check if the user can access the system if the login fails. |Use: username - “beroli”; password - “1234”|The system will return an error asking the user to enter a correct username.|
 
 ###### test_login_success
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
-|The test aims to check if the user will be redirected to the main page if the successful login.|Use:  username - “renataberoli”; password - “123and4”|The user will be redirected to the “list of issues” page.|
+|The test aims to check if the user will be redirected to the main page if the login is successful.|Use:  username - “renataberoli”; password - “123and4”|The user will be redirected to the “list of issues” page.|
 
 ### Scenario 2 - List filters
 ###### test_search_filter
@@ -130,17 +133,17 @@ $ python manage.py createsuperuser
 ###### test_priority_filter
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
-|The test aims to check if the priority field works as expected.|Use: Use: “urgent” as the field’s option.|The system will return only issues with “Urgent” priority.|
+|The test aims to check if the priority field works as expected.|Use: Use: “urgent” as the field’s option.|The system will only return issues with “Urgent” priority.|
 
 ###### test_status_filter
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
-|The test aims to check if the status field works as expected.|Use: Use: “closed” as the field’s option.|The system will return only issues with the status “closed”.|
+|The test aims to check if the status field works as expected.|Use: Use: “closed” as the field’s option.|The system will only return issues with the status “closed”.|
 
 ###### test_all_filters_together
 | Description | Test Data | Expected Result | 
 | ----------- | --------- | --------------- | 
-|The test aims to check if all the list filters work together as expected.|Use: search argument - “error”; priority - “urgent”; status - “open”; label - “frontend”; assigned - “renataberoli”.|The system will show only the issue that matches all the filter's arguments.|
+|The test aims to check if all the list filters work together as expected.|Use: search argument - “error”; priority - “urgent”; status - “open”; label - “frontend”; assigned - “renataberoli”.|The system will only show the issue that matches all the filter's arguments.|
 
 ### Scenario 3 - Create issue
 ###### test_issue_creation
