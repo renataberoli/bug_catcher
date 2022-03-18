@@ -17,7 +17,7 @@
 
 ###### url
 ```sh
-[Bug catcher live](https://renataberoli.pythonanywhere.com/)
+https://renataberoli.pythonanywhere.com/
 ```
 ###### user
 ```sh
@@ -31,8 +31,8 @@ renataberoli
 <br>
 
 ### About the project
-This project is a Pet-project that I created to learn more about the Django framework. Bug catcher is an issue tracker 
-inspired by GitHub Issues and designed with the primary goal of improving my development skills.
+Bug catcher is a Pet-project inspired by GitHub Issues and designed with the primary goal of improving my skills in 
+Django framework.
 
 #### Sketch
 
